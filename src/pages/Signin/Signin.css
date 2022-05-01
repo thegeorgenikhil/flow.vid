@@ -32,7 +32,6 @@
   transition: 0.4s all;
   font-family: inherit;
   font-size: 1.2rem;
-  outline: var(--off-gray) solid 2px;
 }
 
 .input-group input:focus {
