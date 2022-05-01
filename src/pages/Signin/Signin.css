@@ -24,7 +24,7 @@
 
 .input-group input {
   width: 100%;
-  outline: transparent solid 2px;
+  border: transparent solid 2px;
   padding: 0.2rem 1rem;
   appearance: none;
   height: 3rem;
@@ -32,13 +32,12 @@
   transition: 0.4s all;
   font-family: inherit;
   font-size: 1.2rem;
-  border: none;
   outline: var(--off-gray) solid 2px;
 }
 
 .input-group input:focus {
-  outline: var(--color-blue) solid 2px;
+  border: var(--color-blue) solid 2px;
 }
 .input-group input:active {
-  outline: var(--color-blue) solid 2px;
+  border: var(--color-blue) solid 2px;
 }
