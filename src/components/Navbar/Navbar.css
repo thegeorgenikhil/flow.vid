@@ -1,0 +1,14 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  align-items: center;
+}
+
+.nav-brand{
+    font-size: 1.7rem;
+}
+
+.nav-items {
+  list-style-type: none;
+}
