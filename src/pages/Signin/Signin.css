@@ -1,0 +1,42 @@
+.auth-section {
+  max-width: 30rem;
+  padding: 1rem;
+  margin: 2rem auto;
+}
+
+.auth-heading {
+  font-size: 2.6rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.input-group label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.input-group input {
+  width: 100%;
+  border: transparent solid 2px;
+  padding: 0.2rem 1rem;
+  appearance: none;
+  height: 3rem;
+  border-radius: 3px;
+  transition: 0.4s all;
+  font-family: inherit;
+  font-size: 1.2rem;
+}
+
+.input-group input:focus {
+  border: var(--color-blue) solid 2px;
+}
+.input-group input:active {
+  border: var(--color-blue) solid 2px;
+}
