@@ -3,16 +3,20 @@ import "./MenuPopup.css";
 import { MdOutlineAccessTime, MdOutlinePlaylistPlay } from "react-icons/md";
 import { useData } from "../../context/data-context";
 import { useAuth } from "../../context/auth-context";
+import { useNavigate } from "react-router-dom";
 
 const MenuPopup = ({ showPopup, setShowPopup, video }) => {
+  const navigate = useNavigate();
   const { addToWatchLater, dataState, deleteFromWatchLater } = useData();
   const { token } = useAuth();
   const watchLaterHandler = () => {
+    if (!token) return navigate("/signin");
     setShowPopup(false);
     addToWatchLater(video, token);
   };
 
   const removeWatchLaterHandler = () => {
+    if (!token) return navigate("/signin");
     setShowPopup(false);
     deleteFromWatchLater(video._id, token);
   };
