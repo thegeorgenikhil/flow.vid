@@ -1,0 +1,36 @@
+.menu-popup {
+  display: none;
+  position: absolute;
+  top: 1rem;
+  right: 0;
+  background-color: var(--color-white);
+  flex-direction: column;
+  z-index: 2;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.12);
+  border-radius: 3px;
+  user-select: none;
+}
+
+.show {
+  display: flex;
+  flex-direction: column;
+}
+
+.popup-item {
+  display: flex;
+  padding: 1rem;
+  align-items: center;
+  gap: 1rem;
+}
+
+.popup-item p {
+  font-size: 0.9rem;
+}
+
+.popup-item:hover {
+  background-color: var(--color-secondary);
+}
+
+.popup-item-icon {
+  font-size: 1.2rem;
+}
