@@ -1,5 +1,5 @@
 import React from "react";
-import { Sidebar, VideoCard } from "../../components";
+import { VideoCard } from "../../components";
 import { useData } from "../../context";
 
 const Home = () => {

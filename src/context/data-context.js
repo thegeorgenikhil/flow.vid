@@ -16,18 +16,6 @@ export const DataProvider = ({ children }) => {
     watchLater: [],
   });
 
-  const getAllVideos = async () => {
-    try {
-      const res = await getAllVideosService();
-      const data = await res.data;
-      if (data.videos) {
-        dataDispatch({ type: SET_VIDEOS, payload: { videos: data.videos } });
-      }
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
   const getWatchLater = async (token) => {
     try {
       const res = await getWatchLaterService(token);
@@ -74,8 +62,20 @@ export const DataProvider = ({ children }) => {
   };
 
   useEffect(() => {
+    const getAllVideos = async () => {
+      try {
+        const res = await getAllVideosService();
+        const data = await res.data;
+        if (data.videos) {
+          dataDispatch({ type: SET_VIDEOS, payload: { videos: data.videos } });
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
     getAllVideos();
-  }, [getAllVideos]);
+  }, [SET_VIDEOS]);
 
   return (
     <DataContext.Provider

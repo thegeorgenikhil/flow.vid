@@ -7,7 +7,7 @@ const WatchLater = () => {
   const { token } = useAuth();
   useEffect(() => {
     getWatchLater(token);
-  }, []);
+  }, [getWatchLater, token]);
   return (
     <main className="video-container">
       {dataState.watchLater &&

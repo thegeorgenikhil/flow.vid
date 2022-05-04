@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./MenuPopup.css";
 import { MdOutlineAccessTime, MdOutlinePlaylistPlay } from "react-icons/md";
 import { useData } from "../../context/data-context";
