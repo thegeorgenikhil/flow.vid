@@ -1,0 +1,63 @@
+.video-card {
+  display: flex;
+  flex-direction: column;
+  padding: 0.8rem 0.9rem;
+  border-radius: 10px;
+  max-width: 20rem;
+  gap: 1rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.thumbnail-img {
+  max-width: 20rem;
+  width: 100%;
+}
+
+.channel-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.video-card-details {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.video-card-content {
+  margin-left: 0.5rem;
+}
+
+.video-card-name {
+  font-weight: 600;
+}
+
+.channel-name {
+  font-size: 0.8rem;
+}
+
+.channel-details-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.video-views {
+  font-size: 0.8rem;
+}
+
+.more-option-btn {
+  font-size: 1.4rem;
+  visibility: hidden;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.video-card:hover .more-option-btn {
+  visibility: visible;
+}
+
+.popup-container {
+  position: relative;
+}

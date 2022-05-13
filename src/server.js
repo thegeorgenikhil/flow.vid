@@ -75,13 +75,15 @@ export function makeServer({ environment = "development" } = {}) {
 
     routes() {
       this.namespace = "api";
+      this.passthrough("https://www.googleapis.com/youtube/**");
+
       // auth routes (public)
       this.post("/auth/signup", signupHandler.bind(this));
       this.post("/auth/login", loginHandler.bind(this));
 
       // video routes (public)
       this.get("/videos", getAllVideosHandler.bind(this));
-      this.get("video/:videoId", getVideoHandler.bind(this));
+      this.get("/video/:videoId", getVideoHandler.bind(this));
 
       // TODO: POST VIDEO TO DB
 

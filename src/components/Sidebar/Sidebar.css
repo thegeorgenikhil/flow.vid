@@ -1,0 +1,33 @@
+.sidebar {
+  display: flex;
+  border-right: 1px solid var(--off-gray);
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  flex-grow: 1;
+  gap: 1.4rem;
+  max-width: 6%;
+}
+
+.sidebar-link {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  text-decoration: none;
+  color: var(--off-gray);
+  transition: color 0.2s;
+  text-align: center;
+}
+
+.sidebar-link-active {
+  color: var(--color-primary);
+}
+
+.sidebar-link:hover {
+  color: var(--mild-gray);
+}
+
+.sidebar-link svg {
+  font-size: 1.6rem;
+}
