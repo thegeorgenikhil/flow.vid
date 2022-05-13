@@ -3,5 +3,6 @@ import VideoCard from "./VideoCard/VideoCard";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import Navbar from "./Navbar/Navbar";
 import Toast from "./Toast/Toast";
+import PlaylistPopup from "./PlaylistPopup/PlaylistPopup";
 
-export { Sidebar, VideoCard, PrivateRoute,Navbar,Toast };
+export { Sidebar, VideoCard, PrivateRoute, Navbar, Toast, PlaylistPopup };

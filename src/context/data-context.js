@@ -14,6 +14,7 @@ export const DataProvider = ({ children }) => {
   const [dataState, dataDispatch] = useReducer(dataReducer, {
     videos: [],
     watchLater: [],
+    createPlaylistInfo: { showCreatePlaylist: false, playlistDetails: {} },
   });
 
   const getWatchLater = async (token) => {

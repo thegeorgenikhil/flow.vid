@@ -94,8 +94,24 @@ body {
   text-align: center;
 }
 
+.text-semibold {
+  font-weight: 600;
+}
+
+.text-sm {
+  font-size: 0.9rem;
+}
+
 .flex {
   display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
 }
 
 .flex-col {
@@ -106,8 +122,23 @@ body {
   gap: 4px;
 }
 
+.gap-2 {
+  gap: 8px;
+}
+
 .m-auto {
   margin: auto;
+}
+
+.divider-sm {
+  height: 1px;
+  width: 100%;
+  background-color: var(--off-black);
+  margin: 1rem 0;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
 
 @media screen and (max-width: 900px) {

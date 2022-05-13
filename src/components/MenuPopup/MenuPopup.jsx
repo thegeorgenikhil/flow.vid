@@ -4,11 +4,16 @@ import { MdOutlineAccessTime, MdOutlinePlaylistPlay } from "react-icons/md";
 import { useData } from "../../context/data-context";
 import { useAuth } from "../../context/auth-context";
 import { useNavigate } from "react-router-dom";
+import { actionTypes } from "../../reducers";
 
 const MenuPopup = ({ showPopup, setShowPopup, video }) => {
   const navigate = useNavigate();
-  const { addToWatchLater, dataState, deleteFromWatchLater } = useData();
+  const { SET_PLAYLIST_INFO, REMOVE_PLAYLIST_INFO } = actionTypes;
+
+  const { addToWatchLater, dataState, dataDispatch, deleteFromWatchLater } =
+    useData();
   const { token } = useAuth();
+
   const watchLaterHandler = () => {
     if (!token) return navigate("/signin");
     setShowPopup(false);
@@ -21,9 +26,19 @@ const MenuPopup = ({ showPopup, setShowPopup, video }) => {
     deleteFromWatchLater(video._id, token);
   };
 
+  const playlistClickHandler = () => {
+    if (!token) return navigate("/signin");
+    console.log("click");
+    setShowPopup(false);
+    dataDispatch({
+      type: SET_PLAYLIST_INFO,
+      payload: { playlistDetails: video },
+    });
+  };
+
   return (
     <div className={showPopup ? "menu-popup show" : "menu-popup"}>
-      <div className="popup-item">
+      <div className="popup-item" onClick={playlistClickHandler}>
         <MdOutlinePlaylistPlay className="popup-item-icon" />
         <p>Add to Playlist</p>
       </div>
