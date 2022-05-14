@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Navbar, PrivateRoute, Sidebar, Toast } from "./components";
 import { AuthProvider } from "./context";
 import { DataProvider } from "./context/data-context";
-import { Home, Signup, Signin, WatchLater } from "./pages";
+import { Home, Signup, Signin, WatchLater, PlaylistList, PlaylistPage } from "./pages";
 
 function App() {
   return (
@@ -23,6 +23,22 @@ function App() {
                   element={
                     <PrivateRoute>
                       <WatchLater />
+                    </PrivateRoute>
+                  }
+                />
+                <Route
+                  path="/playlists"
+                  element={
+                    <PrivateRoute>
+                      <PlaylistList />
+                    </PrivateRoute>
+                  }
+                />
+                <Route
+                  path="/playlists/:playlistId"
+                  element={
+                    <PrivateRoute>
+                      <PlaylistPage />
                     </PrivateRoute>
                   }
                 />

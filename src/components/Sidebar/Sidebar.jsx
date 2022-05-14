@@ -23,7 +23,7 @@ const SidebarTab = ({ name, icon, to }) => {
   );
 };
 
-const Sidebar = () => {
+export const Sidebar = () => {
   return (
     <aside className="sidebar">
       <SidebarTab name={"Home"} icon={<MdHome />} to={"/"} />
@@ -35,7 +35,7 @@ const Sidebar = () => {
       <SidebarTab
         name={"Playlist"}
         icon={<MdOutlinePlaylistPlay />}
-        to={"/playlist"}
+        to={"/playlists"}
       />
       <SidebarTab name={"Liked"} icon={<MdThumbUp />} to={"/likes"} />
       <SidebarTab name={"History"} icon={<MdHistory />} to={"/history"} />
@@ -43,4 +43,3 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;

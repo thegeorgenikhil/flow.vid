@@ -1,7 +1,7 @@
-import Sidebar from "./Sidebar/Sidebar";
-import VideoCard from "./VideoCard/VideoCard";
-import PrivateRoute from "./PrivateRoute/PrivateRoute";
-import Navbar from "./Navbar/Navbar";
-import Toast from "./Toast/Toast";
-
-export { Sidebar, VideoCard, PrivateRoute,Navbar,Toast };
+export { VideoCard } from "./VideoCard/VideoCard";
+export { PlaylistPopup } from "./PlaylistPopup/PlaylistPopup";
+export { Toast } from "./Toast/Toast";
+export { Navbar } from "./Navbar/Navbar";
+export { PrivateRoute } from "./PrivateRoute/PrivateRoute";
+export { Sidebar } from "./Sidebar/Sidebar";
+export { PlaylistCard } from "./PlaylistCard/PlaylistCard";

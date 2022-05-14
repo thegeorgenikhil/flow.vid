@@ -1,16 +1,19 @@
 import React from "react";
-import { VideoCard } from "../../components";
+import { VideoCard, PlaylistPopup } from "../../components";
 import { useData } from "../../context";
 
 const Home = () => {
   const { dataState } = useData();
   return (
-    <main className="video-container">
-      {dataState.videos &&
-        dataState.videos.map((video) => {
-          return <VideoCard video={video} key={video._id} />;
-        })}
-    </main>
+    <>
+      <PlaylistPopup />
+      <main className="video-container">
+        {dataState.videos &&
+          dataState.videos.map((video) => {
+            return <VideoCard video={video} key={video._id} />;
+          })}
+      </main>
+    </>
   );
 };
 

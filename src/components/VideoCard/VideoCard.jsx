@@ -4,7 +4,7 @@ import { MdMoreVert } from "react-icons/md";
 import { trimVideoTitle } from "../../utils";
 import MenuPopup from "../MenuPopup/MenuPopup";
 
-const VideoCard = ({ video }) => {
+export const VideoCard = ({ video, playlistId }) => {
   const [showPopup, setShowPopup] = useState(false);
   const { _id, title, channelName, channelImgUrl, views } = video;
   return (
@@ -29,10 +29,10 @@ const VideoCard = ({ video }) => {
           showPopup={showPopup}
           setShowPopup={setShowPopup}
           video={video}
+          playlistId={playlistId}
         />
       </div>
     </div>
   );
 };
 
-export default VideoCard;
