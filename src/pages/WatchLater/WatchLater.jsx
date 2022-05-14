@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { VideoCard } from "../../components";
+import { PlaylistPopup, VideoCard } from "../../components";
 import { useAuth, useData } from "../../context";
 
 const WatchLater = () => {
@@ -7,14 +7,17 @@ const WatchLater = () => {
   const { token } = useAuth();
   useEffect(() => {
     getWatchLater(token);
-  }, [getWatchLater, token]);
+  }, [token]);
   return (
-    <main className="video-container">
-      {dataState.watchLater &&
-        dataState.watchLater.map((video) => {
-          return <VideoCard video={video} key={video._id} />;
-        })}
-    </main>
+    <>
+      <PlaylistPopup />
+      <main className="video-container">
+        {dataState.watchLater &&
+          dataState.watchLater.map((video) => {
+            return <VideoCard video={video} key={video._id} />;
+          })}
+      </main>
+    </>
   );
 };
 

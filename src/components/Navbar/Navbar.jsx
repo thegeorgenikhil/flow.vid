@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useAuth } from "../../context";
 import "./Navbar.css";
 
-const Navbar = () => {
+export const Navbar = () => {
   const { isAuthenticated, signoutHandler } = useAuth();
 
   return (
@@ -29,5 +29,3 @@ const Navbar = () => {
     </nav>
   );
 };
-
-export default Navbar;

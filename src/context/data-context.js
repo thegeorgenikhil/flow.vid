@@ -6,15 +6,19 @@ import {
   getAllVideosService,
   getWatchLaterService,
 } from "../services";
+import { getUserPlaylists } from "../utils";
+import { useAuth } from "./auth-context";
 
 const DataContext = createContext();
 
 export const DataProvider = ({ children }) => {
   const { SET_VIDEOS, SET_WATCH_LATER } = actionTypes;
+  const { token } = useAuth();
   const [dataState, dataDispatch] = useReducer(dataReducer, {
     videos: [],
     watchLater: [],
-    createPlaylistInfo: { showCreatePlaylist: false, playlistDetails: {} },
+    playlists: [],
+    createPlaylistInfo: { showCreatePlaylist: false, videoDetails: {} },
   });
 
   const getWatchLater = async (token) => {
@@ -76,7 +80,9 @@ export const DataProvider = ({ children }) => {
     };
 
     getAllVideos();
-  }, [SET_VIDEOS]);
+    getUserPlaylists(token, dataDispatch);
+    // eslint-disable-next-line
+  }, []);
 
   return (
     <DataContext.Provider

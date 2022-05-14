@@ -1,0 +1,33 @@
+.playlist-card-name {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.playlist-img-container {
+  position: relative;
+  overflow: none;
+}
+
+.playlist-img-overlay {
+  position: absolute;
+  top: 70%;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 30%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.playlist-img-overlay-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  color: var(--color-white);
+}
+
+.playlist-delete-btn {
+  font-size: 1.2rem;
+  color: var(--color-primary);
+}
