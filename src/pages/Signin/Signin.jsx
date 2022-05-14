@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import Loader from "../../components/Loader/Loader";
 import { useAuth } from "../../context";
 import "./Signin.css";
-const Signin = () => {
+
+export const Signin = () => {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -80,4 +81,3 @@ const Signin = () => {
   );
 };
 
-export default Signin;

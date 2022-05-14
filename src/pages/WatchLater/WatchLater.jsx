@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { PlaylistPopup, VideoCard } from "../../components";
 import { useAuth, useData } from "../../context";
 
-const WatchLater = () => {
+export const WatchLater = () => {
   const { dataState, getWatchLater } = useData();
   const { token } = useAuth();
   useEffect(() => {
@@ -21,5 +21,3 @@ const WatchLater = () => {
     </>
   );
 };
-
-export default WatchLater;

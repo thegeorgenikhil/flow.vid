@@ -2,7 +2,7 @@ import React from "react";
 import { VideoCard, PlaylistPopup } from "../../components";
 import { useData } from "../../context";
 
-const Home = () => {
+export const Home = () => {
   const { dataState } = useData();
   return (
     <>
@@ -17,4 +17,3 @@ const Home = () => {
   );
 };
 
-export default Home;

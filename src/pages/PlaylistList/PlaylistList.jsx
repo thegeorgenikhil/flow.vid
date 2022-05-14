@@ -16,4 +16,3 @@ export const PlaylistList = () => {
   );
 };
 
-export default PlaylistList;

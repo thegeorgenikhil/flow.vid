@@ -37,7 +37,6 @@ export const PlaylistPopup = () => {
   };
 
   const addToPlaylistHandler = async (e, playlistId) => {
-    console.log(e.target.checked);
     if (e.target.checked) {
       await addToUserPlaylist(token, dataDispatch, playlistId, videoDetails);
     } else {
