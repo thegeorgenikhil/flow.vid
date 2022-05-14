@@ -6,9 +6,6 @@ import { useData } from "../../context";
 export const PlaylistPage = () => {
   const { playlistId } = useParams();
   const { dataState } = useData();
-  console.log(
-    dataState.playlists.find((playlist) => playlist._id === playlistId)
-  );
   return (
     <>
       <PlaylistPopup />
