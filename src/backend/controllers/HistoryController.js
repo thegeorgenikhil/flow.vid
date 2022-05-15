@@ -54,8 +54,8 @@ export const addVideoToHistoryHandler = function (schema, request) {
       );
     }
     const { video } = JSON.parse(request.requestBody);
-    if (user.history.some((item) => item.id === video.id)) {
-      const newHistory = user.history.filter((item) => item.id !== video.id);
+    if (user.history.some((item) => item._id === video._id)) {
+      const newHistory = user.history.filter((item) => item._id !== video._id);
       newHistory.push(video);
       user.history = newHistory;
       return new Response(201, {}, { history: user.history });

@@ -15,7 +15,9 @@ export const History = () => {
   };
 
   useEffect(() => {
-    getHistory(token, dataDispatch);
+    if (!dataState.history.length) {
+      getHistory(token, dataDispatch);
+    }
     // eslint-disable-next-line
   }, []);
 
