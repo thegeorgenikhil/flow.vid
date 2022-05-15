@@ -13,3 +13,16 @@
 .nav-items {
   list-style-type: none;
 }
+
+.sidebar-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--mild-gray);
+}
+
+@media screen and (max-width: 600px) {
+  .sidebar-toggle {
+    display: block;
+  }
+}

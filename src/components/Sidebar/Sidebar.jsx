@@ -23,9 +23,9 @@ const SidebarTab = ({ name, icon, to }) => {
   );
 };
 
-export const Sidebar = () => {
+export const Sidebar = ({ isSidebarOpen }) => {
   return (
-    <aside className="sidebar">
+    <aside className={isSidebarOpen ? "sidebar sidebar-open" : "sidebar"}>
       <SidebarTab name={"Home"} icon={<MdHome />} to={"/"} />
       <SidebarTab
         name={"Watch Later"}

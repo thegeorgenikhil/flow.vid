@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Navbar, PrivateRoute, Sidebar, Toast } from "./components";
 import { AuthProvider } from "./context";
@@ -15,15 +16,16 @@ import {
 } from "./pages";
 
 function App() {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   return (
     <div className="App">
       <BrowserRouter>
         <AuthProvider>
           <DataProvider>
             <Toast />
-            <Navbar />
+            <Navbar setIsSidebarOpen={setIsSidebarOpen} />
             <div className="main-container">
-              <Sidebar />
+              <Sidebar isSidebarOpen={isSidebarOpen} />
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/signup" element={<Signup />} />
