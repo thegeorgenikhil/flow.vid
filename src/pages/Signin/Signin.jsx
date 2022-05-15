@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import Loader from "../../components/Loader/Loader";
+import { Loader } from "../../components";
 import { useAuth } from "../../context";
 import "./Signin.css";
 
@@ -12,7 +12,7 @@ export const Signin = () => {
   const { email, password } = formData;
   const isFormFullyFilled = email && password;
   const { signinHandler, isLoading } = useAuth();
-
+  
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevState) => ({
@@ -80,4 +80,3 @@ export const Signin = () => {
     </div>
   );
 };
-

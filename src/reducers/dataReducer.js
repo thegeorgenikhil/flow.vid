@@ -7,6 +7,9 @@ const {
   REMOVE_PLAYLIST_INFO,
   SET_PLAYLISTS,
   UPDATE_PLAYLIST_DETAILS,
+  SET_HISTORY,
+  SET_LIKED,
+  SIGNOUT,
 } = actionTypes;
 
 export const dataReducer = (state, action) => {
@@ -40,6 +43,19 @@ export const dataReducer = (state, action) => {
         return playlist;
       });
       return { ...state, playlists: updatedPlaylists };
+    case SET_HISTORY:
+      return { ...state, history: action.payload.history };
+    case SET_LIKED:
+      return { ...state, liked: action.payload.likes };
+    case SIGNOUT:
+      return {
+        ...state,
+        watchLater: [],
+        playlists: [],
+        createPlaylistInfo: { showCreatePlaylist: false, videoDetails: {} },
+        history: [],
+        liked: [],
+      };
     default:
       return state;
   }

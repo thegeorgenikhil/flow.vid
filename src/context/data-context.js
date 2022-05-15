@@ -6,7 +6,7 @@ import {
   getAllVideosService,
   getWatchLaterService,
 } from "../services";
-import { getUserPlaylists } from "../utils";
+import { getHistory, getLiked, getUserPlaylists } from "../utils";
 import { useAuth } from "./auth-context";
 
 const DataContext = createContext();
@@ -19,6 +19,8 @@ export const DataProvider = ({ children }) => {
     watchLater: [],
     playlists: [],
     createPlaylistInfo: { showCreatePlaylist: false, videoDetails: {} },
+    history: [],
+    liked: [],
   });
 
   const getWatchLater = async (token) => {
@@ -80,9 +82,14 @@ export const DataProvider = ({ children }) => {
     };
 
     getAllVideos();
-    getUserPlaylists(token, dataDispatch);
+    if (token) {
+      getUserPlaylists(token, dataDispatch);
+      getWatchLater(token);
+      getHistory(token, dataDispatch);
+      getLiked(token, dataDispatch);
+    }
     // eslint-disable-next-line
-  }, []);
+  }, [token]);
 
   return (
     <DataContext.Provider

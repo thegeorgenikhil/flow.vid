@@ -68,6 +68,10 @@ body {
   border: 1px solid var(--color-primary);
 }
 
+.clear-history-btn {
+  margin: 2rem 0 0 2.9rem;
+}
+
 .loader-container {
   display: flex;
   justify-content: center;
@@ -102,6 +106,10 @@ body {
   font-size: 0.9rem;
 }
 
+.text-md {
+  font-size: 1.2rem;
+}
+
 .flex {
   display: flex;
 }
@@ -126,6 +134,10 @@ body {
   gap: 8px;
 }
 
+.gap-4 {
+  gap: 16px;
+}
+
 .m-auto {
   margin: auto;
 }
@@ -139,6 +151,15 @@ body {
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.format-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.w-full {
+  width: 100%;
 }
 
 @media screen and (max-width: 900px) {

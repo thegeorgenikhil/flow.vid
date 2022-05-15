@@ -1,0 +1,53 @@
+.single-video-container {
+  height: 22rem;
+  width: 95%;
+  margin: 1rem;
+  display: block;
+}
+
+.react-player {
+  height: 30rem;
+  width: 100%;
+  position: unset;
+}
+
+.video-info-container {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.video-info-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.video-info-views {
+  color: var(--mild-gray);
+  font-weight: 500;
+  margin: 0.5rem 0;
+}
+
+.video-info-channel-name {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.video-page-actions{
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  color: var(--mild-gray);
+  padding-bottom: 1rem;
+}
+
+.video-page-actions:hover{
+  color: var(--color-primary);
+}
+
+.is-liked{
+  color: var(--color-primary);
+}

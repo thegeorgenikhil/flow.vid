@@ -1,10 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useAuth } from "../../context";
+import { useAuth, useData } from "../../context";
+import { actionTypes } from "../../reducers";
 import "./Navbar.css";
 
 export const Navbar = () => {
   const { isAuthenticated, signoutHandler } = useAuth();
+  const { dataDispatch } = useData();
+
+  const { SIGNOUT } = actionTypes;
+  const onSignout = (e) => {
+    dataDispatch({ type: SIGNOUT });
+    signoutHandler(e);
+  };
 
   return (
     <nav className="navbar">
@@ -14,7 +22,7 @@ export const Navbar = () => {
       <ul className="nav-items">
         {isAuthenticated ? (
           <li>
-            <button className="btn btn-outline" onClick={signoutHandler}>
+            <button className="btn btn-outline" onClick={onSignout}>
               Signout
             </button>
           </li>
