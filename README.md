@@ -56,7 +56,7 @@ npm start
 
 # Built Using
 
-- React JS
+- ReactJS
 - mockBee - **Mock Backend**
 - React Context API + useReducer
 - React Router v6
