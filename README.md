@@ -65,7 +65,6 @@ npm start
 
 # Preview
 
-![Preview Gif](./public/assets/flow.vid-readme.gif)
 
 # Contributing
 
