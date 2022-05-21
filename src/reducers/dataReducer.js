@@ -10,6 +10,7 @@ const {
   SET_HISTORY,
   SET_LIKED,
   SIGNOUT,
+  SET_CATEGORY,
 } = actionTypes;
 
 export const dataReducer = (state, action) => {
@@ -47,6 +48,8 @@ export const dataReducer = (state, action) => {
       return { ...state, history: action.payload.history };
     case SET_LIKED:
       return { ...state, liked: action.payload.likes };
+    case SET_CATEGORY:
+      return { ...state, category: action.payload.category };
     case SIGNOUT:
       return {
         ...state,
@@ -55,6 +58,7 @@ export const dataReducer = (state, action) => {
         createPlaylistInfo: { showCreatePlaylist: false, videoDetails: {} },
         history: [],
         liked: [],
+        category: "",
       };
     default:
       return state;

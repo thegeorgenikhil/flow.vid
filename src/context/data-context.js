@@ -21,6 +21,7 @@ export const DataProvider = ({ children }) => {
     createPlaylistInfo: { showCreatePlaylist: false, videoDetails: {} },
     history: [],
     liked: [],
+    category: "",
   });
 
   const getWatchLater = async (token) => {

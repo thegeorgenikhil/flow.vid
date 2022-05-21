@@ -85,7 +85,54 @@ body {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
-  margin: 2rem;
+  margin: 0 2rem;
+}
+
+.no-videos-img {
+  max-width: 15rem;
+  width: 100%;
+  object-fit: cover;
+  opacity: 0.3;
+}
+
+.no-videos-text {
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--off-black);
+}
+
+.no-videos-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem auto;
+  width: calc(100vw - 6rem);
+}
+
+.chip {
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  font-size: 1rem;
+  padding: 0.45rem 0.75rem;
+  font-weight: 500;
+  border: 1px solid var(--color-primary);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.chip-active {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.chip-container {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 1rem 2rem;
 }
 
 /* UTILITY CLASSES */
@@ -122,6 +169,10 @@ body {
   justify-content: center;
 }
 
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
 .flex-col {
   flex-direction: column;
 }
@@ -140,6 +191,15 @@ body {
 
 .m-auto {
   margin: auto;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mr-auto {
+  margin-right: auto;
 }
 
 .divider-sm {

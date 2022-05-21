@@ -22,9 +22,11 @@ export const Navbar = ({ setIsSidebarOpen }) => {
           className="sidebar-toggle"
           onClick={() => setIsSidebarOpen((prev) => !prev)}
         />
-        <h1 className="nav-brand">
-          flow<span className="text-primary">.vid</span>
-        </h1>
+        <Link to={"/"} className="format-link">
+          <h1 className="nav-brand">
+            flow<span className="text-primary">.vid</span>
+          </h1>
+        </Link>
       </div>
       <ul className="nav-items">
         {isAuthenticated ? (

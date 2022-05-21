@@ -1,5 +1,5 @@
 import React from "react";
-import { VideoCard, PlaylistPopup } from "../../components";
+import { VideoCard, PlaylistPopup, NoVideos } from "../../components";
 import { useData } from "../../context";
 
 export const Like = () => {
@@ -7,6 +7,7 @@ export const Like = () => {
   return (
     <>
       <PlaylistPopup />
+      {dataState.liked && <NoVideos />}
       <main className="video-container">
         {dataState.liked &&
           dataState.liked.map((video) => {

@@ -41,4 +41,82 @@ export const videos = [
     views: "149k",
     category: "Next.js",
   },
+
+  {
+    _id: "e-5obm1G_FY",
+    title:
+      "Learning Functional Programming with JavaScript - Anjana Vakil - JSUnconf",
+    channelImgUrl:
+      "https://yt3.ggpht.com/ytc/AKedOLSUOEQunmzvzQOeAWEorFZiXGHQ6LEMMR02wzNQ9w=s48-c-k-c0x00ffffff-no-rj",
+    channelName: "JSConf",
+    views: "2.5M",
+    category: "Javascript",
+  },
+  {
+    _id: "ZvbzSrg0afE",
+    title:
+      "How JavaScript Works 🔥& Execution Context | Namaste JavaScript Ep.1",
+    channelImgUrl:
+      "https://yt3.ggpht.com/ytc/AKedOLR8gqN3fHHNYbehMcsJ49rapBPhJMGPYSrl6YQyNg=s48-c-k-c0x00ffffff-no-rj",
+    channelName: "Akshay Saini",
+    views: "385k",
+    category: "Javascript",
+  },
+  {
+    _id: "8aGhZQkoFbQ",
+    title:
+      "What the heck is the event loop anyway? | Philip Roberts | JSConf EU",
+    channelImgUrl:
+      "https://yt3.ggpht.com/ytc/AKedOLSUOEQunmzvzQOeAWEorFZiXGHQ6LEMMR02wzNQ9w=s48-c-k-c0x00ffffff-no-rj",
+    channelName: "JSConf",
+    views: "2.4M",
+    category: "Javascript",
+  },
+  {
+    _id: "2WJL19wDH68",
+    title:
+      "JS Engine EXPOSED 🔥 Google's V8 Architecture 🚀 | Namaste JavaScript Ep. 16",
+    channelImgUrl:
+      "https://yt3.ggpht.com/ytc/AKedOLR8gqN3fHHNYbehMcsJ49rapBPhJMGPYSrl6YQyNg=s48-c-k-c0x00ffffff-no-rj",
+    channelName: "Akshay Saini",
+    views: "150k",
+    category: "Javascript",
+  },
+
+  {
+    _id: "QFaFIcGhPoM",
+    title: "ReactJS Tutorial - 1 - Introduction",
+    channelImgUrl:
+      "https://yt3.ggpht.com/os7Yw6RimtysXXpc8NrXraci87TjXgZSUQyAezi0D3RrNL3YP5riIwi1-0al4Wz0XwzH6oBu6g=s48-c-k-c0x00ffffff-no-rj",
+    channelName: "Codevolution",
+    views: "211k",
+    category: "React",
+  },
+  {
+    _id: "FJDVKeh7RJI",
+    title: "React & TypeScript - Course for Beginners",
+    channelImgUrl:
+      "https://yt3.ggpht.com/ytc/AKedOLRR2uNiXJiFH-XRmtGgkdICxTuDJxCPJidKFRNCNg=s48-c-k-c0x00ffffff-no-rj",
+    channelName: "freeCodeCamp.org",
+    views: "164k",
+    category: "React",
+  },
+  {
+    _id: "7YhdqIR2Yzo",
+    title: "How Does React Actually Work? React.js Deep Dive #1",
+    channelImgUrl:
+      "https://yt3.ggpht.com/ytc/AKedOLRBIFv3DYr9EjZpyfakmVkbAF1LaawXHw9dDFG2Ag=s48-c-k-c0x00ffffff-no-rj",
+    channelName: "Philip Fabianek",
+    views: "21k",
+    category: "React",
+  },
+  {
+    _id: "TjnyFNxQ67Y",
+    title: "How a React App Works Under the Hood",
+    channelImgUrl:
+      "https://yt3.ggpht.com/ytc/AKedOLRKlDI1zwn0tcm_sDMyQN_SOIXtcI29LHnDYPWwsw=s48-c-k-c0x00ffffff-no-rj",
+    channelName: "PortEXE",
+    views: "35k",
+    category: "React",
+  },
 ];

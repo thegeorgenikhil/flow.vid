@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { VideoCard, PlaylistPopup, Loader } from "../../components";
+import { VideoCard, PlaylistPopup, Loader, NoVideos } from "../../components";
 import { useAuth, useData } from "../../context";
 import { clearHistory, getHistory } from "../../utils";
 
@@ -25,9 +25,15 @@ export const History = () => {
     <>
       <PlaylistPopup />
       <div>
-        <button className="btn clear-history-btn" onClick={clearHistoryHandler}>
-          {isLoading ? <Loader /> : "CLEAR HISTORY"}
-        </button>
+        {dataState.history.length !== 0 && (
+          <button
+            className="btn clear-history-btn"
+            onClick={clearHistoryHandler}
+          >
+            {isLoading ? <Loader /> : "CLEAR HISTORY"}
+          </button>
+        )}
+        {dataState.history.length === 0 && <NoVideos />}
         <main className="video-container">
           {dataState.history &&
             [...dataState.history].reverse().map((video) => {

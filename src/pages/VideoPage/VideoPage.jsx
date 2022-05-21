@@ -44,12 +44,15 @@ export const VideoPage = () => {
     }
   };
 
+  const videoHistoryHandler = () => {
+    if (token) addToHistory(token, dataDispatch, videoInfo);
+  };
+
   useEffect(() => {
     if (!videoInfo) {
       const video = dataState.videos.find((video) => video._id === videoId);
       if (video) {
         setVideoInfo(video);
-        if (token) addToHistory(token, dataDispatch, video);
         setIsLiked(dataState.liked.some((video) => video._id === videoId));
       }
     }
@@ -66,6 +69,7 @@ export const VideoPage = () => {
             controls
             width="100%"
             height="100%"
+            onStart={videoHistoryHandler}
           />
         </div>
         {videoInfo && (

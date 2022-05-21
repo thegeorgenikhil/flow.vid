@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { PlaylistPopup, VideoCard } from "../../components";
+import { NoVideos, PlaylistPopup, VideoCard } from "../../components";
 import { useAuth, useData } from "../../context";
 
 export const WatchLater = () => {
@@ -12,6 +12,7 @@ export const WatchLater = () => {
   return (
     <>
       <PlaylistPopup />
+      {dataState.watchLater.length === 0 && <NoVideos />}
       <main className="video-container">
         {dataState.watchLater &&
           dataState.watchLater.map((video) => {

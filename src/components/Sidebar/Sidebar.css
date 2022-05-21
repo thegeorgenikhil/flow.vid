@@ -7,7 +7,7 @@
   flex-shrink: 0;
   gap: 1.4rem;
   width: 6rem;
-  height: 100%;
+  height: auto;
 }
 
 .sidebar-link {
