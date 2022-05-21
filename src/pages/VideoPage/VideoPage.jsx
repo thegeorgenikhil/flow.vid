@@ -113,7 +113,7 @@ export const VideoPage = () => {
               <img
                 className="channel-img"
                 src={videoInfo?.channelImgUrl}
-                alt=""
+                alt={videoInfo?.channelName}
               />
               <p className="video-info-channel-name">
                 {videoInfo?.channelName}

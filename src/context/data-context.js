@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
+import { useNavigate } from "react-router-dom";
 import { actionTypes, dataReducer } from "../reducers";
 import {
   addToWatchLaterService,
@@ -12,6 +13,7 @@ import { useAuth } from "./auth-context";
 const DataContext = createContext();
 
 export const DataProvider = ({ children }) => {
+  const navigate = useNavigate();
   const { SET_VIDEOS, SET_WATCH_LATER } = actionTypes;
   const { token } = useAuth();
   const [dataState, dataDispatch] = useReducer(dataReducer, {
@@ -41,6 +43,7 @@ export const DataProvider = ({ children }) => {
 
   const addToWatchLater = async (video, token) => {
     try {
+      if (!token) return navigate("/signin");
       const res = await addToWatchLaterService(video, token);
       const data = await res.data;
       if (data.watchlater) {

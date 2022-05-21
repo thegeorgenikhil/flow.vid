@@ -7,7 +7,7 @@ export const PlaylistList = () => {
 
   return (
     <>
-      {dataState.playlists && <NoVideos />}
+      {dataState.playlists.length === 0 && <NoVideos />}
       <main className="video-container">
         {dataState.playlists.map((playlist) => {
           return <PlaylistCard key={playlist._id} playlist={playlist} />;

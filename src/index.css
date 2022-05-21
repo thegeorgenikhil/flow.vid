@@ -137,6 +137,10 @@ body {
 
 /* UTILITY CLASSES */
 
+.color-white {
+  color: var(--color-white);
+}
+
 .text-primary {
   color: var(--color-primary);
 }

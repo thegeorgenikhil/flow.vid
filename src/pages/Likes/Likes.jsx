@@ -7,7 +7,7 @@ export const Like = () => {
   return (
     <>
       <PlaylistPopup />
-      {dataState.liked && <NoVideos />}
+      {dataState.liked.length === 0 && <NoVideos />}
       <main className="video-container">
         {dataState.liked &&
           dataState.liked.map((video) => {
