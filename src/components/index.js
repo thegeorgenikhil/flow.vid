@@ -5,3 +5,6 @@ export { Navbar } from "./Navbar/Navbar";
 export { PrivateRoute } from "./PrivateRoute/PrivateRoute";
 export { Sidebar } from "./Sidebar/Sidebar";
 export { PlaylistCard } from "./PlaylistCard/PlaylistCard";
+export { Loader } from "./Loader/Loader";
+export { NoVideos } from "./NoVideos/NoVideos";
+export { CategoryChips } from "./CategoryChips/CategoryChips";

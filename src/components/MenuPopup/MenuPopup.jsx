@@ -1,13 +1,27 @@
 import React from "react";
 import "./MenuPopup.css";
-import { MdOutlineAccessTime, MdOutlinePlaylistPlay } from "react-icons/md";
-import { useData } from "../../context/data-context";
-import { useAuth } from "../../context/auth-context";
+import {
+  MdOutlineAccessTime,
+  MdOutlinePlaylistPlay,
+  MdThumbUp,
+} from "react-icons/md";
+import { useData, useAuth } from "../../context";
 import { useNavigate } from "react-router-dom";
 import { actionTypes } from "../../reducers";
-import { deleteFromUserPlaylist } from "../../utils";
+import {
+  deleteFromUserPlaylist,
+  deleteFromHistory,
+  removeFromLiked,
+} from "../../utils";
 
-const MenuPopup = ({ showPopup, setShowPopup, video, playlistId }) => {
+const MenuPopup = ({
+  showPopup,
+  setShowPopup,
+  video,
+  playlistId,
+  history = false,
+  isLiked = false,
+}) => {
   const navigate = useNavigate();
   const { SET_PLAYLIST_INFO } = actionTypes;
 
@@ -25,6 +39,18 @@ const MenuPopup = ({ showPopup, setShowPopup, video, playlistId }) => {
     if (!token) return navigate("/signin");
     setShowPopup(false);
     deleteFromWatchLater(video._id, token);
+  };
+
+  const deleteFromHistoryHandler = () => {
+    if (!token) return navigate("/signin");
+    setShowPopup(false);
+    deleteFromHistory(token, dataDispatch, video._id);
+  };
+
+  const removeFromLikedHandler = () => {
+    if (!token) return navigate("/signin");
+    setShowPopup(false);
+    removeFromLiked(token, dataDispatch, video._id);
   };
 
   const playlistClickHandler = () => {
@@ -61,6 +87,18 @@ const MenuPopup = ({ showPopup, setShowPopup, video, playlistId }) => {
         <div className="popup-item" onClick={deleteFromPlaylistHandler}>
           <MdOutlinePlaylistPlay className="popup-item-icon" />
           <p>Remove from Playlist</p>
+        </div>
+      )}
+      {history && (
+        <div className="popup-item" onClick={deleteFromHistoryHandler}>
+          <MdOutlinePlaylistPlay className="popup-item-icon" />
+          <p>Delete from History</p>
+        </div>
+      )}
+      {isLiked && (
+        <div className="popup-item" onClick={removeFromLikedHandler}>
+          <MdThumbUp className="popup-item-icon" />
+          <p>Remove from Liked</p>
         </div>
       )}
     </div>

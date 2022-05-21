@@ -24,11 +24,11 @@
 
 .input-group input {
   width: 100%;
-  border: transparent solid 2px;
+  border: var(--mild-gray) solid 1px;
   padding: 0.2rem 1rem;
   appearance: none;
   height: 3rem;
-  border-radius: 3px;
+  border-radius: 5px;
   transition: 0.4s all;
   font-family: inherit;
   font-size: 1.2rem;
@@ -38,5 +38,8 @@
   border: var(--color-blue) solid 2px;
 }
 .input-group input:active {
+  border: var(--color-blue) solid 2px;
+}
+.input-group input:focus-visible {
   border: var(--color-blue) solid 2px;
 }

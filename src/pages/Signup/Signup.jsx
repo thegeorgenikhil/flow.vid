@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import Loader from "../../components/Loader/Loader";
+import { Loader } from "../../components";
 import { useAuth } from "../../context";
 
-const Signup = () => {
+export const Signup = () => {
   const [formData, setFormData] = useState({
     userName: "",
     email: "",
@@ -98,5 +98,3 @@ const Signup = () => {
     </section>
   );
 };
-
-export default Signup;

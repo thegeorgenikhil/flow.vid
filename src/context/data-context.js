@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
+import { useNavigate } from "react-router-dom";
 import { actionTypes, dataReducer } from "../reducers";
 import {
   addToWatchLaterService,
@@ -6,12 +7,13 @@ import {
   getAllVideosService,
   getWatchLaterService,
 } from "../services";
-import { getUserPlaylists } from "../utils";
+import { getHistory, getLiked, getUserPlaylists } from "../utils";
 import { useAuth } from "./auth-context";
 
 const DataContext = createContext();
 
 export const DataProvider = ({ children }) => {
+  const navigate = useNavigate();
   const { SET_VIDEOS, SET_WATCH_LATER } = actionTypes;
   const { token } = useAuth();
   const [dataState, dataDispatch] = useReducer(dataReducer, {
@@ -19,6 +21,9 @@ export const DataProvider = ({ children }) => {
     watchLater: [],
     playlists: [],
     createPlaylistInfo: { showCreatePlaylist: false, videoDetails: {} },
+    history: [],
+    liked: [],
+    category: "",
   });
 
   const getWatchLater = async (token) => {
@@ -38,6 +43,7 @@ export const DataProvider = ({ children }) => {
 
   const addToWatchLater = async (video, token) => {
     try {
+      if (!token) return navigate("/signin");
       const res = await addToWatchLaterService(video, token);
       const data = await res.data;
       if (data.watchlater) {
@@ -80,9 +86,14 @@ export const DataProvider = ({ children }) => {
     };
 
     getAllVideos();
-    getUserPlaylists(token, dataDispatch);
+    if (token) {
+      getUserPlaylists(token, dataDispatch);
+      getWatchLater(token);
+      getHistory(token, dataDispatch);
+      getLiked(token, dataDispatch);
+    }
     // eslint-disable-next-line
-  }, []);
+  }, [token]);
 
   return (
     <DataContext.Provider

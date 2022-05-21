@@ -1,20 +1,37 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useAuth } from "../../context";
+import { useAuth, useData } from "../../context";
+import { actionTypes } from "../../reducers";
+import { MdMenu } from "react-icons/md";
 import "./Navbar.css";
 
-export const Navbar = () => {
+export const Navbar = ({ setIsSidebarOpen }) => {
   const { isAuthenticated, signoutHandler } = useAuth();
+  const { dataDispatch } = useData();
+
+  const { SIGNOUT } = actionTypes;
+  const onSignout = (e) => {
+    dataDispatch({ type: SIGNOUT });
+    signoutHandler(e);
+  };
 
   return (
     <nav className="navbar">
-      <h1 className="nav-brand">
-        flow<span className="text-primary">.vid</span>
-      </h1>
+      <div className="flex items-center gap-4">
+        <MdMenu
+          className="sidebar-toggle"
+          onClick={() => setIsSidebarOpen((prev) => !prev)}
+        />
+        <Link to={"/"} className="format-link">
+          <h1 className="nav-brand">
+            flow<span className="text-primary">.vid</span>
+          </h1>
+        </Link>
+      </div>
       <ul className="nav-items">
         {isAuthenticated ? (
           <li>
-            <button className="btn btn-outline" onClick={signoutHandler}>
+            <button className="btn btn-outline" onClick={onSignout}>
               Signout
             </button>
           </li>

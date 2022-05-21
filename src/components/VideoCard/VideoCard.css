@@ -61,3 +61,14 @@
 .popup-container {
   position: relative;
 }
+
+@media screen and (max-width: 600px) {
+  .video-card {
+    max-width: 30rem;
+  }
+
+  .thumbnail-img {
+    max-width: 30rem;
+    width: 100%;
+  }
+}

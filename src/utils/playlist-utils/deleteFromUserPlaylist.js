@@ -12,7 +12,6 @@ export const deleteFromUserPlaylist = async (
   try {
     const res = await deleteFromPlaylistService(token, playlistId, videoId);
     const data = await res.data;
-    console.log(data);
     if (data.playlist) {
       dataDispatch({
         type: UPDATE_PLAYLIST_DETAILS,

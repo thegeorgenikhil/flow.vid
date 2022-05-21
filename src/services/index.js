@@ -11,3 +11,14 @@ export {
   addToPlaylistService,
   deleteFromPlaylistService,
 } from "./playlist-services";
+export {
+  addToHistoryService,
+  clearHistoryService,
+  deleteFromHistoryService,
+  getHistoryService,
+} from "./history-services";
+export {
+  getLikedService,
+  addToLikedService,
+  removeFromLikedService,
+} from "./like-services";

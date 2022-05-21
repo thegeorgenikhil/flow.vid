@@ -1,15 +1,9 @@
 import React from "react";
 import { CircleSpinner } from "react-spinners-kit";
-const Loader = () => {
+export const Loader = () => {
   return (
     <div className="loader-container">
-      <CircleSpinner
-        size={1.2}
-        sizeUnit={"rem"}
-        color="#FFFFFF"
-      />
+      <CircleSpinner size={1.2} sizeUnit={"rem"} className="color-white" />
     </div>
   );
 };
-
-export default Loader;
